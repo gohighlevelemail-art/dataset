@@ -889,6 +889,137 @@
       .dataset-actions{justify-content:flex-start}
     }
 
+  
+    .batch-stream-btn{
+      border-color:rgba(36,184,255,.42);
+      background:rgba(36,184,255,.09);
+      color:#a8ddff;
+    }
+    .batch-stream-modal{width:min(1220px,97vw)}
+    .batch-progress{
+      display:flex;
+      align-items:center;
+      padding:13px 20px;
+      border-bottom:1px solid var(--line);
+      background:#08131f;
+      position:sticky;
+      top:71px;
+      z-index:2;
+    }
+    .batch-step-pill{
+      display:flex;align-items:center;gap:7px;
+      border:0;background:transparent;color:#667c94;
+      font-size:10px;font-weight:900;padding:5px 3px;
+      cursor:default;white-space:nowrap;
+    }
+    .batch-step-pill span{
+      width:21px;height:21px;border-radius:50%;
+      display:grid;place-items:center;
+      border:1px solid #30445a;background:#0b1827;color:#879bb3;
+      font-size:9px;
+    }
+    .batch-step-pill.active{color:#d8e8f8}
+    .batch-step-pill.active span{border-color:rgba(36,184,255,.65);background:rgba(36,184,255,.14);color:#a7e0ff}
+    .batch-step-pill.done{color:#8fcfb9}
+    .batch-step-pill.done span{border-color:rgba(25,209,143,.55);background:rgba(25,209,143,.12);color:#8cf0cc}
+    .batch-progress-line{height:1px;flex:1;min-width:18px;background:#23364b;margin:0 6px}
+    .batch-body{padding:18px 20px 6px}
+    .batch-step{display:none}
+    .batch-step.show{display:block}
+    .batch-shared-card,.batch-ticker-card,.batch-review-card{
+      border:1px solid var(--line);border-radius:12px;background:#0b1624;
+      overflow:hidden;margin-bottom:13px;
+    }
+    .batch-section-head,.batch-ticker-head{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      padding:11px 13px;border-bottom:1px solid var(--line);background:#101c2b;
+    }
+    .batch-section-head h3,.batch-ticker-head h3,.batch-toolbar h3,.batch-review-head h3{margin:0;font-size:13px}
+    .batch-section-head p,.batch-toolbar p,.batch-review-head p{
+      margin:4px 0 0;color:#70859d;font-size:10px;
+    }
+    .batch-toolbar{
+      display:flex;justify-content:space-between;align-items:center;gap:14px;
+      margin:15px 0 11px;
+    }
+    .batch-add-ticker{
+      border:1px solid rgba(25,209,143,.43);background:rgba(25,209,143,.09);
+      color:#93efd0;border-radius:8px;padding:8px 11px;font-size:10px;font-weight:900;cursor:pointer;
+    }
+    .batch-remove-ticker{
+      border:1px solid rgba(255,106,120,.34);background:rgba(255,106,120,.07);
+      color:#ffb4bd;border-radius:7px;padding:5px 8px;font-size:9px;font-weight:900;cursor:pointer;
+    }
+    .batch-ticker-number{
+      color:#70869e;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-right:7px;
+    }
+    .batch-ticker-symbol{font-size:14px;font-weight:900;color:#fff}
+    .batch-news-details{
+      grid-column:1/-1;border-top:1px solid var(--line-soft);padding-top:11px;
+    }
+    .batch-news-grid{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;
+    }
+    .batch-snapshot-fields{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:14px;
+    }
+    .batch-observed{
+      display:flex;align-items:center;gap:8px;
+      color:#9db0c4;font-size:10px;font-weight:850;
+    }
+    .batch-observed input{width:auto;margin:0}
+    .batch-not-observed{
+      opacity:.42;
+    }
+    .batch-time-override{
+      display:grid;grid-template-columns:1fr 130px;gap:8px;
+    }
+    .batch-actions{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      position:sticky;bottom:0;background:#0a1522;border-top:1px solid var(--line);
+      padding:14px 20px;z-index:4;
+    }
+    .batch-actions-right{display:flex;gap:9px}
+    .batch-save-btn{padding-left:18px;padding-right:18px}
+    .batch-review-head{margin-bottom:11px}
+    .batch-review-card{padding:13px}
+    .batch-review-top{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px
+    }
+    .batch-review-top strong{font-size:14px;color:#fff}
+    .batch-review-meta{font-size:10px;color:#748aa2}
+    .batch-review-grid{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+    }
+    .batch-review-block{
+      border:1px solid var(--line-soft);border-radius:8px;background:#08131f;padding:9px;
+    }
+    .batch-review-block span{
+      display:block;color:#6f859d;font-size:8px;text-transform:uppercase;letter-spacing:.08em;font-weight:900
+    }
+    .batch-review-block strong{display:block;color:#eaf3ff;font-size:10px;margin-top:4px}
+    .batch-empty-warning{
+      border:1px solid rgba(213,169,79,.38);background:rgba(213,169,79,.08);
+      color:#e9cc8d;padding:10px 12px;border-radius:9px;font-size:10px;margin-bottom:12px;
+    }
+    @media(max-width:900px){
+      .batch-progress{overflow:auto}
+      .batch-progress-line{min-width:14px}
+      .batch-snapshot-fields,.batch-news-grid,.batch-review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:620px){
+      .batch-snapshot-fields,.batch-news-grid,.batch-review-grid{grid-template-columns:1fr}
+      .batch-toolbar{align-items:flex-start;flex-direction:column}
+      .batch-actions{align-items:stretch;flex-direction:column}
+      .batch-actions-right{width:100%}
+      .batch-actions-right button{flex:1}
+    }
+
+  
+    .draft-status{margin-top:5px;font-size:9px;color:#72879f;font-weight:750}
+    .draft-status.saved{color:#83cdb3}
+    .modal-backdrop{cursor:default}
+    .modal{cursor:auto}
   </style>
 </head>
 <body>
@@ -921,6 +1052,7 @@
           <button class="data-tool-btn" type="button" id="importJsonBtn">Import JSON</button>
           <button class="data-tool-btn" type="button" id="exportCsvBtn">Export CSV</button>
           <button class="data-tool-btn" type="button" id="exportJsonBtn">Export JSON</button>
+          <button class="data-tool-btn batch-stream-btn" type="button" id="openBatchStream">＋ Batch Stream</button>
           <button class="add-btn" type="button" id="openEntry">＋ Add Entry</button>
           <input id="jsonFileInput" type="file" accept=".json,application/json" hidden>
         </div>
@@ -1675,7 +1807,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">New Record</div>
-          <h2 id="entryTitle">Add Data Set Entry</h2>
+          <h2 id="entryTitle">Add Data Set Entry</h2><div class="draft-status" id="entryDraftStatus">Draft autosaves while you type.</div>
         </div>
         <button class="close-btn" id="closeEntry" type="button">×</button>
       </div>
@@ -1873,9 +2005,147 @@
 
         <div class="form-actions">
           <button type="button" class="btn-secondary" id="cancelEntry">Cancel</button>
-          <button type="submit" class="btn-primary">Save Entry</button>
+          <button type="submit" class="btn-primary" id="saveEntryBtn">Save Entry</button>
         </div>
       </form>
+    </div>
+  </div>
+
+
+  <div class="modal-backdrop" id="batchStreamModal" aria-hidden="true">
+    <div class="modal batch-stream-modal" role="dialog" aria-modal="true" aria-labelledby="batchStreamTitle">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Batch Stream Entry</div>
+          <h2 id="batchStreamTitle">Log One Stream, Multiple Tickers</h2>
+          <div class="inline-note">Enter the qualifying tickers once. The same ticker list automatically carries through Initial Premarket, Pre-7, and After Market.</div><div class="draft-status" id="batchDraftStatus">Batch draft autosaves while you work.</div>
+        </div>
+        <button class="close-btn" id="closeBatchStream" type="button">×</button>
+      </div>
+
+      <div class="batch-progress">
+        <button class="batch-step-pill active" type="button" data-batch-step="1"><span>1</span> General</button>
+        <div class="batch-progress-line"></div>
+        <button class="batch-step-pill" type="button" data-batch-step="2"><span>2</span> Initial PM</button>
+        <div class="batch-progress-line"></div>
+        <button class="batch-step-pill" type="button" data-batch-step="3"><span>3</span> Pre-7</button>
+        <div class="batch-progress-line"></div>
+        <button class="batch-step-pill" type="button" data-batch-step="4"><span>4</span> AF</button>
+        <div class="batch-progress-line"></div>
+        <button class="batch-step-pill" type="button" data-batch-step="5"><span>5</span> Review</button>
+      </div>
+
+      <div class="batch-body">
+        <section class="batch-step show" id="batchStep1">
+          <div class="batch-shared-card">
+            <div class="batch-section-head">
+              <div>
+                <h3>Stream Information</h3>
+                <p>Entered once and attached to every ticker in this batch.</p>
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Trading Date</label>
+                <input type="date" id="batchDate">
+              </div>
+              <div class="field">
+                <label>Stream / Source</label>
+                <input type="text" id="batchSource" value="Zendoo Live Scanner" placeholder="Zendoo Live Scanner">
+              </div>
+              <div class="field span-2">
+                <label>Stream URL</label>
+                <input type="text" id="batchStreamUrl" placeholder="Optional livestream URL">
+              </div>
+            </div>
+          </div>
+
+          <div class="batch-toolbar">
+            <div>
+              <h3>General Information</h3>
+              <p>Add every qualifying ticker from this stream. Repeat companies are allowed.</p>
+            </div>
+            <button class="batch-add-ticker" type="button" id="batchAddTicker">＋ Add Another Ticker</button>
+          </div>
+          <div id="batchGeneralCards"></div>
+        </section>
+
+        <section class="batch-step" id="batchStep2">
+          <div class="batch-shared-card">
+            <div class="batch-section-head">
+              <div>
+                <h3>Initial Premarket Snapshot</h3>
+                <p>The ticker list comes directly from General Information.</p>
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Shared Snapshot Time (ET)</label>
+                <input type="time" id="batchPmSharedTime">
+                <div class="inline-note">Applied to all observed tickers unless a ticker overrides it.</div>
+              </div>
+            </div>
+          </div>
+          <div id="batchPmCards"></div>
+        </section>
+
+        <section class="batch-step" id="batchStep3">
+          <div class="batch-shared-card">
+            <div class="batch-section-head">
+              <div>
+                <h3>Pre-7 Snapshot</h3>
+                <p>Same tickers, new scanner snapshot.</p>
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Shared Snapshot Time (ET)</label>
+                <input type="time" id="batchPre7SharedTime">
+                <div class="inline-note">Applied to all observed tickers unless a ticker overrides it.</div>
+              </div>
+            </div>
+          </div>
+          <div id="batchPre7Cards"></div>
+        </section>
+
+        <section class="batch-step" id="batchStep4">
+          <div class="batch-shared-card">
+            <div class="batch-section-head">
+              <div>
+                <h3>After Market Snapshot</h3>
+                <p>AF volume can remain blank when the historical source does not provide it.</p>
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Shared Snapshot Time (ET)</label>
+                <input type="time" id="batchAfSharedTime">
+                <div class="inline-note">Applied to all observed tickers unless a ticker overrides it.</div>
+              </div>
+            </div>
+          </div>
+          <div id="batchAfCards"></div>
+        </section>
+
+        <section class="batch-step" id="batchStep5">
+          <div class="batch-review-head">
+            <div>
+              <h3>Review Batch</h3>
+              <p>Each ticker will be saved as its own ticker/date observation while remaining linked to this stream session.</p>
+            </div>
+          </div>
+          <div id="batchReview"></div>
+        </section>
+      </div>
+
+      <div class="batch-actions">
+        <button type="button" class="btn-secondary" id="batchCancel">Cancel</button>
+        <div class="batch-actions-right">
+          <button type="button" class="btn-secondary" id="batchBack" style="display:none">← Back</button>
+          <button type="button" class="btn-primary" id="batchNext">Continue →</button>
+          <button type="button" class="btn-primary batch-save-btn" id="batchSave" style="display:none">Save Batch</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2096,7 +2366,7 @@ function exportJson(){
 }
 function exportCsv(){
   const columns=[
-    ['date','Date'],['ticker','Ticker'],['preGapRef','Pre-Gap Ref'],['instOwn','Inst Own %'],['income','Income'],['marketCap','Market Cap'],['volatility','Volatility'],['news','News'],['financialStrength','Financial Strength'],
+    ['date','Date'],['ticker','Ticker'],['streamSessionId','Stream Session ID'],['streamSource','Stream Source'],['streamUrl','Stream URL'],['entryMode','Entry Mode'],['preGapRef','Pre-Gap Ref'],['instOwn','Inst Own %'],['income','Income'],['marketCap','Market Cap'],['volatility','Volatility'],['news','News'],['financialStrength','Financial Strength'],
     ['headline','Headline'],['newsUrl','News URL'],
     ['pmTime','PM Time'],['pmPrice','PM Price'],['pmGap','PM Gap %'],['pmVolume','PM Volume'],['pmFloat','PM Float'],['pmRotate','PM Rotate'],['pmZenV','PM ZenV'],['pmZenP','PM ZenP'],['pmAtrSprd','PM ATRSprd'],['pmAtrVwap','PM ATRVWAP'],['pmAtrHod','PM ATRHOD'],
     ['pre7Time','Pre7 Time'],['pre7Price','Pre7 Price'],['pre7Gap','Pre7 Gap %'],['pre7Volume','Pre7 Volume'],['pre7Float','Pre7 Float'],['pre7Rotate','Pre7 Rotate'],['pre7ZenV','Pre7 ZenV'],['pre7ZenP','Pre7 ZenP'],['pre7AtrSprd','Pre7 ATRSprd'],['pre7AtrVwap','Pre7 ATRVWAP'],['pre7AtrHod','Pre7 ATRHOD'],
@@ -2137,7 +2407,7 @@ function clearRenderedRows(){
 function showEmptyDatasetRow(){
   if(researchRecords.length)return;
   const tr=document.createElement('tr');tr.className='empty-row';
-  tr.innerHTML='<td class="sticky-date"></td><td class="sticky-ticker"></td><td colspan="41" class="empty-message">No entries yet. Use Add Entry or Import JSON.</td>';
+  tr.innerHTML='<td class="sticky-date"></td><td class="sticky-ticker"></td><td colspan="41" class="empty-message">No entries yet. Use Add Entry, Batch Stream, or Import JSON.</td>';
   tbody.appendChild(tr);
 }
 function renderAllRecords(){
@@ -2331,8 +2601,503 @@ outcomeForm.addEventListener('submit',e=>{
   closeOutcome();
 });
 
-function openModal(){modal.classList.add('show');modal.setAttribute('aria-hidden','false')}function closeModal(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true')}
-document.getElementById('openEntry').onclick=openModal;document.getElementById('closeEntry').onclick=closeModal;document.getElementById('cancelEntry').onclick=closeModal;modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+const batchStreamModal=document.getElementById('batchStreamModal');
+const batchGeneralCards=document.getElementById('batchGeneralCards');
+const batchPmCards=document.getElementById('batchPmCards');
+const batchPre7Cards=document.getElementById('batchPre7Cards');
+const batchAfCards=document.getElementById('batchAfCards');
+const batchReview=document.getElementById('batchReview');
+let batchStep=1;
+let batchTickers=[];
+let batchCounter=0;
+
+function batchUid(){
+  batchCounter+=1;
+  return 'bt_'+Date.now()+'_'+batchCounter+'_'+Math.random().toString(36).slice(2,6);
+}
+function batchEscAttr(s=''){
+  return esc(s).replace(/`/g,'&#096;');
+}
+function batchGeneralCard(t){
+  const div=document.createElement('div');
+  div.className='batch-ticker-card';
+  div.dataset.batchId=t.id;
+  div.innerHTML=`
+    <div class="batch-ticker-head">
+      <div><span class="batch-ticker-number">Ticker</span><span class="batch-ticker-symbol">${esc(t.ticker||'NEW')}</span></div>
+      <button class="batch-remove-ticker" type="button">Remove</button>
+    </div>
+    <div class="fields">
+      <div class="field"><label>Ticker</label><input data-bf="ticker" type="text" value="${batchEscAttr(t.ticker||'')}" placeholder="ABCD" autocomplete="off"></div>
+      <div class="field"><label>Pre-Gap Reference</label><input data-bf="preGapRef" type="number" step="0.0001" value="${batchEscAttr(t.preGapRef||'')}"></div>
+      <div class="field"><label>Inst Own %</label><input data-bf="instOwn" type="number" step="0.01" value="${batchEscAttr(t.instOwn||'')}"></div>
+      <div class="field"><label>Income</label><input data-bf="income" type="text" value="${batchEscAttr(t.income||'')}" placeholder="-12.4M"></div>
+      <div class="field"><label>Market Cap</label><input data-bf="marketCap" type="text" value="${batchEscAttr(t.marketCap||'')}" placeholder="24.6M"></div>
+      <div class="field"><label>Volatility</label><input data-bf="volatility" type="text" value="${batchEscAttr(t.volatility||'')}" placeholder="18.4%"></div>
+      <div class="field"><label>News</label><select data-bf="news">
+        <option value="">Select…</option><option value="Yes"${t.news==='Yes'?' selected':''}>Yes — News Present</option><option value="No"${t.news==='No'?' selected':''}>No — Momentum Gap</option>
+      </select></div>
+      <div class="field"><label>Financial Strength</label><select data-bf="financialStrength">
+        <option value="">Select…</option><option${t.financialStrength==='Strong'?' selected':''}>Strong</option><option${t.financialStrength==='Neutral'?' selected':''}>Neutral</option><option${t.financialStrength==='Weak'?' selected':''}>Weak</option>
+      </select></div>
+      <div class="batch-news-details">
+        <div class="batch-news-grid">
+          <div class="field"><label>Fundamentals As-Of</label><input data-bf="fundamentalsAsOf" type="date" value="${batchEscAttr(t.fundamentalsAsOf||'')}"></div>
+          <div class="field"><label>Fundamentals Source</label><input data-bf="fundamentalsSource" type="text" value="${batchEscAttr(t.fundamentalsSource||'')}" placeholder="Finviz"></div>
+          <div class="field span-2"><label>News URL</label><input data-bf="newsUrl" type="text" value="${batchEscAttr(t.newsUrl||'')}" placeholder="Optional article URL"></div>
+          <div class="field span-2"><label>Headline</label><input data-bf="headline" type="text" value="${batchEscAttr(t.headline||'')}" placeholder="News headline"></div>
+          <div class="field"><label>Published Date</label><input data-bf="publishedDate" type="date" value="${batchEscAttr(t.publishedDate||'')}"></div>
+          <div class="field"><label>Published Time</label><input data-bf="publishedTime" type="time" value="${batchEscAttr(t.publishedTime||'')}"></div>
+          <div class="field span-4"><label>Article Text</label><textarea data-bf="articleText" placeholder="Optional. Paste article text for News Pattern analysis.">${esc(t.articleText||'')}</textarea></div>
+        </div>
+      </div>
+    </div>`;
+  div.querySelector('.batch-remove-ticker').onclick=()=>{
+    syncBatchGeneral();
+    if(batchTickers.length<=1){alert('A batch needs at least one ticker.');return}
+    batchTickers=batchTickers.filter(x=>x.id!==t.id);
+    renderBatchGeneral();
+  };
+  div.querySelector('[data-bf="ticker"]').addEventListener('input',e=>{
+    const symbol=div.querySelector('.batch-ticker-symbol');
+    symbol.textContent=e.target.value.trim().toUpperCase()||'NEW';
+  });
+  return div;
+}
+function addBatchTicker(){
+  syncBatchGeneral();
+  batchTickers.push({id:batchUid(),ticker:'',pmObserved:true,pre7Observed:true,afObserved:true});
+  renderBatchGeneral();
+  const cards=[...batchGeneralCards.querySelectorAll('.batch-ticker-card')];
+  cards[cards.length-1]?.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function renderBatchGeneral(){
+  batchGeneralCards.innerHTML='';
+  batchTickers.forEach(t=>batchGeneralCards.appendChild(batchGeneralCard(t)));
+}
+function syncBatchGeneral(){
+  batchGeneralCards.querySelectorAll('.batch-ticker-card').forEach(card=>{
+    const t=batchTickers.find(x=>x.id===card.dataset.batchId);if(!t)return;
+    card.querySelectorAll('[data-bf]').forEach(el=>{
+      t[el.dataset.bf]=(el.value??'').trim?.() ?? el.value ?? '';
+    });
+    t.ticker=String(t.ticker||'').toUpperCase();
+  });
+}
+
+function snapshotCard(t,prefix,label){
+  const data=t[prefix]||{};
+  const observedKey=prefix+'Observed';
+  const observed=t[observedKey]!==false;
+  const div=document.createElement('div');
+  div.className='batch-ticker-card'+(observed?'':' batch-not-observed');
+  div.dataset.batchId=t.id;
+  div.innerHTML=`
+    <div class="batch-ticker-head">
+      <div><span class="batch-ticker-number">${esc(label)}</span><span class="batch-ticker-symbol">${esc(t.ticker||'—')}</span></div>
+      <label class="batch-observed"><input type="checkbox" data-observed ${observed?'checked':''}> Observed in this snapshot</label>
+    </div>
+    <div class="batch-snapshot-fields">
+      <div class="field">
+        <label>Time Override</label>
+        <input data-sf="time" type="time" value="${batchEscAttr(data.time||'')}">
+        <div class="inline-note">Leave blank to use shared time.</div>
+      </div>
+      <div class="field"><label>Price</label><input data-sf="price" type="number" step="0.0001" value="${batchEscAttr(data.price||'')}"></div>
+      <div class="field"><label>Gap %</label><input data-sf="gap" ${prefix==='af'?'class="auto-field" readonly type="text"':'type="number" step="0.01"'} value="${batchEscAttr(data.gap||'')}"></div>
+      <div class="field"><label>Volume${prefix==='af'?' (optional)':''}</label><input data-sf="volume" type="text" value="${batchEscAttr(data.volume||'')}" placeholder="3.9 = 3.9M, or 900K"></div>
+      <div class="field"><label>Float</label><input data-sf="float" type="text" value="${batchEscAttr(data.float||'')}" placeholder="897K, 8.9M"></div>
+      <div class="field"><label>Rotate</label><input data-sf="rotate" class="auto-field" type="text" readonly value="${batchEscAttr(data.rotate||'')}"></div>
+      ${prefix!=='af'?`
+      <div class="field"><label>ZenV</label><div class="color-row"><input data-sf="zenV" type="number" step="0.01" value="${batchEscAttr(data.zenV||'')}"><select data-sf="zenVColor"><option value="">Color</option><option${data.zenVColor==='Green'?' selected':''}>Green</option><option${data.zenVColor==='Red'?' selected':''}>Red</option></select></div></div>
+      <div class="field"><label>ZenP</label><input data-sf="zenP" type="number" step="0.01" value="${batchEscAttr(data.zenP||'')}"></div>
+      <div class="field"><label>ATRSprd</label><input data-sf="atrSprd" type="number" step="0.01" value="${batchEscAttr(data.atrSprd||'')}"></div>
+      <div class="field"><label>ATRVWAP</label><div class="color-row"><input data-sf="atrVwap" type="number" step="0.01" value="${batchEscAttr(data.atrVwap||'')}"><select data-sf="atrVwapColor"><option value="">Color</option><option${data.atrVwapColor==='Green'?' selected':''}>Green</option><option${data.atrVwapColor==='Red'?' selected':''}>Red</option></select></div></div>
+      <div class="field"><label>ATRHOD</label><input data-sf="atrHod" type="number" step="0.01" value="${batchEscAttr(data.atrHod||'')}"></div>
+      `:`
+      <div class="field"><label>Price Δ vs Pre-7</label><input data-sf="priceDelta" class="auto-field" type="text" readonly value="${batchEscAttr(data.priceDelta||'')}"></div>
+      <div class="field"><label>Gap Δ vs Pre-7</label><input data-sf="gapDelta" class="auto-field" type="text" readonly value="${batchEscAttr(data.gapDelta||'')}"></div>
+      <div class="field"><label>Volume Δ vs Pre-7</label><input data-sf="volumeDelta" class="auto-field" type="text" readonly value="${batchEscAttr(data.volumeDelta||'')}"></div>
+      <div class="field"><label>Float Δ vs Pre-7</label><input data-sf="floatDelta" class="auto-field" type="text" readonly value="${batchEscAttr(data.floatDelta||'')}"></div>
+      `}
+    </div>`;
+  const observedBox=div.querySelector('[data-observed]');
+  observedBox.onchange=()=>{
+    t[observedKey]=observedBox.checked;
+    div.classList.toggle('batch-not-observed',!observedBox.checked);
+  };
+  function calc(){
+    const V=parseShares(div.querySelector('[data-sf="volume"]').value);
+    const F=parseShares(div.querySelector('[data-sf="float"]').value);
+    div.querySelector('[data-sf="rotate"]').value=Number.isFinite(V)&&Number.isFinite(F)&&F>0?(V/F).toFixed(3)+'x':'';
+    if(prefix==='af'){
+      const ref=parseFloat(t.preGapRef);
+      const price=parseFloat(div.querySelector('[data-sf="price"]').value);
+      const gap=Number.isFinite(ref)&&ref>0&&Number.isFinite(price)?((price-ref)/ref)*100:null;
+      div.querySelector('[data-sf="gap"]').value=Number.isFinite(gap)?gap.toFixed(2):'';
+      const p7=t.pre7||{};
+      const p7p=parseFloat(p7.price),p7g=parseFloat(p7.gap),p7v=parseShares(p7.volume),p7f=parseShares(p7.float);
+      div.querySelector('[data-sf="priceDelta"]').value=Number.isFinite(p7p)&&Number.isFinite(price)?signed(price-p7p):'';
+      div.querySelector('[data-sf="gapDelta"]').value=Number.isFinite(p7g)&&Number.isFinite(gap)?signed(gap-p7g,' pts'):'';
+      div.querySelector('[data-sf="volumeDelta"]').value=Number.isFinite(p7v)&&Number.isFinite(V)?signedShares(V-p7v):'';
+      div.querySelector('[data-sf="floatDelta"]').value=Number.isFinite(p7f)&&Number.isFinite(F)?signedShares(F-p7f):'';
+    }
+  }
+  ['volume','float','price'].forEach(k=>div.querySelector(`[data-sf="${k}"]`)?.addEventListener('input',calc));
+  calc();
+  return div;
+}
+function syncSnapshot(container,prefix){
+  container.querySelectorAll('.batch-ticker-card').forEach(card=>{
+    const t=batchTickers.find(x=>x.id===card.dataset.batchId);if(!t)return;
+    t[prefix]=t[prefix]||{};
+    card.querySelectorAll('[data-sf]').forEach(el=>{
+      t[prefix][el.dataset.sf]=(el.value??'').trim?.() ?? el.value ?? '';
+    });
+    t[prefix+'Observed']=card.querySelector('[data-observed]')?.checked!==false;
+  });
+}
+function renderBatchSnapshot(prefix){
+  const config={
+    pm:[batchPmCards,'Initial PM'],
+    pre7:[batchPre7Cards,'Pre-7'],
+    af:[batchAfCards,'After Market']
+  }[prefix];
+  const [host,label]=config;
+  host.innerHTML='';
+  batchTickers.forEach(t=>host.appendChild(snapshotCard(t,prefix,label)));
+}
+function activeBatchTickers(){
+  syncBatchGeneral();
+  return batchTickers.filter(t=>String(t.ticker||'').trim());
+}
+function batchValidateGeneral(){
+  syncBatchGeneral();
+  const tickers=activeBatchTickers();
+  if(!document.getElementById('batchDate').value){
+    alert('Enter the trading date before continuing.');return false;
+  }
+  if(!tickers.length){
+    alert('Enter at least one ticker before continuing.');return false;
+  }
+  const symbols=tickers.map(t=>t.ticker);
+  const dup=symbols.find((s,i)=>symbols.indexOf(s)!==i);
+  if(dup && !confirm(`You entered ${dup} more than once in this same batch. Keep both entries?`))return false;
+  batchTickers=tickers;
+  return true;
+}
+function batchReviewHtml(){
+  const date=document.getElementById('batchDate').value;
+  const source=document.getElementById('batchSource').value.trim();
+  const sharedPm=document.getElementById('batchPmSharedTime').value;
+  const sharedPre7=document.getElementById('batchPre7SharedTime').value;
+  const sharedAf=document.getElementById('batchAfSharedTime').value;
+  const cards=batchTickers.map(t=>{
+    const pm=t.pm||{},p7=t.pre7||{},af=t.af||{};
+    const pmTime=pm.time||sharedPm||'—',p7Time=p7.time||sharedPre7||'—',afTime=af.time||sharedAf||'—';
+    return `<div class="batch-review-card">
+      <div class="batch-review-top"><strong>${esc(t.ticker)}</strong><span class="batch-review-meta">${esc(date)}${source?' • '+esc(source):''}</span></div>
+      <div class="batch-review-grid">
+        <div class="batch-review-block"><span>General</span><strong>Pre-gap ${esc(t.preGapRef||'—')} • News ${esc(t.news||'—')}</strong></div>
+        <div class="batch-review-block"><span>Initial PM</span><strong>${t.pmObserved===false?'Not observed':esc(pmTime+' • '+(pm.gap||'—')+'% • '+(pm.volume||'—'))}</strong></div>
+        <div class="batch-review-block"><span>Pre-7</span><strong>${t.pre7Observed===false?'Not observed':esc(p7Time+' • '+(p7.gap||'—')+'% • '+(p7.volume||'—'))}</strong></div>
+        <div class="batch-review-block"><span>AF</span><strong>${t.afObserved===false?'Not observed':esc(afTime+' • '+(af.gap||'—')+'% • '+(af.volume||'—'))}</strong></div>
+      </div>
+    </div>`;
+  }).join('');
+  batchReview.innerHTML=`<div class="batch-empty-warning">${batchTickers.length} ticker${batchTickers.length===1?'':'s'} will be saved as separate observations linked to one stream session.</div>${cards}`;
+}
+function batchSetStep(step){
+  if(step<1||step>5)return;
+  if(batchStep===1 && step>1 && !batchValidateGeneral())return;
+  if(batchStep===2)syncSnapshot(batchPmCards,'pm');
+  if(batchStep===3)syncSnapshot(batchPre7Cards,'pre7');
+  if(batchStep===4)syncSnapshot(batchAfCards,'af');
+
+  batchStep=step;
+  document.querySelectorAll('.batch-step').forEach(s=>s.classList.remove('show'));
+  document.getElementById('batchStep'+step).classList.add('show');
+  document.querySelectorAll('.batch-step-pill').forEach(p=>{
+    const n=Number(p.dataset.batchStep);
+    p.classList.toggle('active',n===step);
+    p.classList.toggle('done',n<step);
+  });
+
+  if(step===2)renderBatchSnapshot('pm');
+  if(step===3)renderBatchSnapshot('pre7');
+  if(step===4)renderBatchSnapshot('af');
+  if(step===5){syncSnapshot(batchAfCards,'af');batchReviewHtml()}
+
+  document.getElementById('batchBack').style.display=step>1?'inline-flex':'none';
+  document.getElementById('batchNext').style.display=step<5?'inline-flex':'none';
+  document.getElementById('batchSave').style.display=step===5?'inline-flex':'none';
+  batchStreamModal.querySelector('.modal').scrollTo({top:0,behavior:'smooth'});
+}
+
+function snapshotBatchDraftState(){
+  try{
+    if(batchStep===1)syncBatchGeneral();
+    if(batchStep===2)syncSnapshot(batchPmCards,'pm');
+    if(batchStep===3)syncSnapshot(batchPre7Cards,'pre7');
+    if(batchStep===4)syncSnapshot(batchAfCards,'af');
+  }catch(e){}
+  return{
+    batchStep,batchTickers,
+    date:document.getElementById('batchDate').value,
+    source:document.getElementById('batchSource').value,
+    streamUrl:document.getElementById('batchStreamUrl').value,
+    pmSharedTime:document.getElementById('batchPmSharedTime').value,
+    pre7SharedTime:document.getElementById('batchPre7SharedTime').value,
+    afSharedTime:document.getElementById('batchAfSharedTime').value
+  };
+}
+function saveBatchDraft(){
+  clearTimeout(batchDraftTimer);
+  batchDraftTimer=setTimeout(()=>{
+    try{
+      localStorage.setItem(BATCH_DRAFT_KEY,JSON.stringify({savedAt:new Date().toISOString(),state:snapshotBatchDraftState()}));
+      const s=document.getElementById('batchDraftStatus');if(s){s.textContent='Batch draft saved.';s.classList.add('saved')}
+    }catch(e){console.warn('Batch draft save failed',e)}
+  },150);
+}
+function restoreBatchDraft(){
+  try{
+    const raw=localStorage.getItem(BATCH_DRAFT_KEY);if(!raw)return false;
+    const st=JSON.parse(raw)?.state;
+    if(!st||!Array.isArray(st.batchTickers)||!st.batchTickers.length)return false;
+    batchTickers=st.batchTickers;
+    document.getElementById('batchDate').value=st.date||'';
+    document.getElementById('batchSource').value=st.source||'Zendoo Live Scanner';
+    document.getElementById('batchStreamUrl').value=st.streamUrl||'';
+    document.getElementById('batchPmSharedTime').value=st.pmSharedTime||'';
+    document.getElementById('batchPre7SharedTime').value=st.pre7SharedTime||'';
+    document.getElementById('batchAfSharedTime').value=st.afSharedTime||'';
+    renderBatchGeneral();
+    renderBatchSnapshot('pm');renderBatchSnapshot('pre7');renderBatchSnapshot('af');
+    batchStep=Math.min(5,Math.max(1,Number(st.batchStep)||1));
+    batchSetStep(batchStep);
+    const s=document.getElementById('batchDraftStatus');if(s){s.textContent='Restored saved batch draft.';s.classList.add('saved')}
+    return true;
+  }catch(e){console.warn('Batch draft restore failed',e);return false}
+}
+function clearBatchDraft(){
+  try{localStorage.removeItem(BATCH_DRAFT_KEY)}catch(e){}
+  const s=document.getElementById('batchDraftStatus');if(s){s.textContent='Batch draft autosaves while you work.';s.classList.remove('saved')}
+}
+
+function resetBatch(){
+  batchStep=1;
+  batchTickers=[{id:batchUid(),ticker:'',pmObserved:true,pre7Observed:true,afObserved:true}];
+  document.getElementById('batchDate').value='';
+  document.getElementById('batchSource').value='Zendoo Live Scanner';
+  document.getElementById('batchStreamUrl').value='';
+  document.getElementById('batchPmSharedTime').value='';
+  document.getElementById('batchPre7SharedTime').value='';
+  document.getElementById('batchAfSharedTime').value='';
+  renderBatchGeneral();
+  batchSetStep(1);
+}
+function openBatch(){
+  if(!restoreBatchDraft())resetBatch();
+  batchStreamModal.classList.add('show');
+  batchStreamModal.setAttribute('aria-hidden','false');
+}
+function closeBatch(){
+  batchStreamModal.classList.remove('show');batchStreamModal.setAttribute('aria-hidden','true');
+}
+document.getElementById('openBatchStream').onclick=openBatch;
+document.getElementById('closeBatchStream').onclick=closeBatch;
+document.getElementById('batchCancel').onclick=closeBatch;
+document.getElementById('batchAddTicker').onclick=()=>{addBatchTicker();saveBatchDraft()};
+['batchDate','batchSource','batchStreamUrl','batchPmSharedTime','batchPre7SharedTime','batchAfSharedTime'].forEach(id=>{
+  const el=document.getElementById(id);
+  el.addEventListener('input',saveBatchDraft);
+  el.addEventListener('change',saveBatchDraft);
+});
+document.getElementById('batchBack').onclick=()=>{batchSetStep(batchStep-1);saveBatchDraft()};
+document.getElementById('batchNext').onclick=()=>{batchSetStep(batchStep+1);saveBatchDraft()};
+batchStreamModal.addEventListener('click',e=>{if(e.target===batchStreamModal){/* backdrop click intentionally ignored */}});
+batchStreamModal.addEventListener('input',e=>{if(e.target.matches('input,select,textarea'))saveBatchDraft()});
+batchStreamModal.addEventListener('change',e=>{if(e.target.matches('input,select,textarea'))saveBatchDraft()});
+
+function batchRecordFromTicker(t,sessionId){
+  const date=document.getElementById('batchDate').value;
+  const source=document.getElementById('batchSource').value.trim();
+  const streamUrl=document.getElementById('batchStreamUrl').value.trim();
+  const sharedPm=document.getElementById('batchPmSharedTime').value;
+  const sharedPre7=document.getElementById('batchPre7SharedTime').value;
+  const sharedAf=document.getElementById('batchAfSharedTime').value;
+  const pm=t.pm||{},p7=t.pre7||{},af=t.af||{};
+  const pmObs=t.pmObserved!==false,pre7Obs=t.pre7Observed!==false,afObs=t.afObserved!==false;
+
+  const pmTime=pmObs?(pm.time||sharedPm):'';
+  const pre7Time=pre7Obs?(p7.time||sharedPre7):'';
+  const afTime=afObs?(af.time||sharedAf):'';
+
+  const pmVolume=pmObs?formatShares(parseShares(pm.volume)):'';
+  const pmFloat=pmObs?formatShares(parseShares(pm.float)):'';
+  const pre7Volume=pre7Obs?formatShares(parseShares(p7.volume)):'';
+  const pre7Float=pre7Obs?formatShares(parseShares(p7.float)):'';
+  const afVolume=afObs?formatShares(parseShares(af.volume)):'';
+  const afFloat=afObs?formatShares(parseShares(af.float)):'';
+
+  const newsAnalysis=analyzeNewsText(t.headline||'',t.articleText||'',t.newsUrl||'');
+
+  return normalizeImportedRecord({
+    id:'rec_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),
+    streamSessionId:sessionId,
+    streamSource:source,
+    streamUrl,
+    streamDate:date,
+    entryMode:'batch',
+    date,ticker:String(t.ticker||'').toUpperCase(),preGapRef:t.preGapRef||'',
+    instOwn:t.instOwn||'',income:t.income||'',marketCap:t.marketCap||'',volatility:t.volatility||'',
+    news:t.news||'',financialStrength:t.financialStrength||'',
+    fundamentalsAsOf:t.fundamentalsAsOf||'',fundamentalsSource:t.fundamentalsSource||'',
+    newsUrl:t.newsUrl||'',headline:t.headline||'',publishedDate:t.publishedDate||'',publishedTime:t.publishedTime||'',articleText:t.articleText||'',
+
+    pmObserved:pmObs,
+    pmTime,pmPrice:pmObs?(pm.price||''):'',pmGap:pmObs?(pm.gap||''):'',pmVolume,pmFloat,pmRotate:pmObs?(pm.rotate||''):'',
+    pmZenV:pmObs?[pm.zenV,pm.zenVColor].filter(Boolean).join(' '):'',pmZenP:pmObs?(pm.zenP||''):'',pmAtrSprd:pmObs?(pm.atrSprd||''):'',
+    pmAtrVwap:pmObs?[pm.atrVwap,pm.atrVwapColor].filter(Boolean).join(' '):'',pmAtrHod:pmObs?(pm.atrHod||''):'',
+
+    pre7Observed:pre7Obs,
+    pre7Time,pre7Price:pre7Obs?(p7.price||''):'',pre7Gap:pre7Obs?(p7.gap||''):'',pre7Volume,pre7Float,pre7Rotate:pre7Obs?(p7.rotate||''):'',
+    pre7ZenV:pre7Obs?[p7.zenV,p7.zenVColor].filter(Boolean).join(' '):'',pre7ZenP:pre7Obs?(p7.zenP||''):'',pre7AtrSprd:pre7Obs?(p7.atrSprd||''):'',
+    pre7AtrVwap:pre7Obs?[p7.atrVwap,p7.atrVwapColor].filter(Boolean).join(' '):'',pre7AtrHod:pre7Obs?(p7.atrHod||''):'',
+
+    afObserved:afObs,
+    afTime,afPrice:afObs?(af.price||''):'',afGap:afObs?(af.gap||''):'',afVolume,afFloat,afRotate:afObs?(af.rotate||''):'',
+    afPriceDelta:afObs?(af.priceDelta||''):'',afGapDelta:afObs?(af.gapDelta||''):'',afVolumeDelta:afObs?(af.volumeDelta||''):'',afFloatDelta:afObs?(af.floatDelta||''):'',
+
+    newsAnalysis,outcome:{}
+  });
+}
+document.getElementById('batchSave').onclick=()=>{
+  syncBatchGeneral();syncSnapshot(batchPmCards,'pm');syncSnapshot(batchPre7Cards,'pre7');syncSnapshot(batchAfCards,'af');
+  const valid=batchTickers.filter(t=>String(t.ticker||'').trim());
+  if(!valid.length){alert('There are no tickers to save.');return}
+  const sessionId='stream_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);
+  const records=valid.map(t=>batchRecordFromTicker(t,sessionId));
+  tbody.querySelectorAll('.empty-row').forEach(r=>r.remove());
+
+  // Keep the same newest-first behavior as single-entry mode.
+  records.forEach(r=>researchRecords.unshift(r));
+  records.slice().reverse().forEach(r=>renderRecord(r,false));
+
+  updateDuplicateHighlights();
+  saveAppState();
+  clearBatchDraft();
+  closeBatch();
+  alert(`Saved ${records.length} ticker${records.length===1?'':'s'} from this stream.`);
+};
+
+
+const ENTRY_DRAFT_KEY='tradingResearch.entryDraft.v1';
+const BATCH_DRAFT_KEY='tradingResearch.batchDraft.v1';
+let entryDraftTimer=null,batchDraftTimer=null;
+
+function serializeEntryDraft(){
+  const data={};
+  [...form.elements].forEach(el=>{if(el.name)data[el.name]=el.type==='checkbox'?el.checked:el.value});
+  return data;
+}
+function saveEntryDraft(){
+  clearTimeout(entryDraftTimer);
+  entryDraftTimer=setTimeout(()=>{
+    try{
+      localStorage.setItem(ENTRY_DRAFT_KEY,JSON.stringify({savedAt:new Date().toISOString(),data:serializeEntryDraft()}));
+      const s=document.getElementById('entryDraftStatus');if(s){s.textContent='Draft saved.';s.classList.add('saved')}
+    }catch(e){console.warn('Entry draft save failed',e)}
+  },150);
+}
+function restoreEntryDraft(){
+  try{
+    const raw=localStorage.getItem(ENTRY_DRAFT_KEY);if(!raw)return false;
+    const data=JSON.parse(raw)?.data||{};
+    Object.entries(data).forEach(([name,value])=>{
+      const el=form.elements[name];if(!el)return;
+      if(el.type==='checkbox')el.checked=Boolean(value);else el.value=value??'';
+    });
+    ['pm','pre7','af'].forEach(p=>{
+      const V=parseShares(form.elements[p+'Volume']?.value),F=parseShares(form.elements[p+'Float']?.value);
+      if(form.elements[p+'Rotate'])form.elements[p+'Rotate'].value=Number.isFinite(V)&&Number.isFinite(F)&&F>0?(V/F).toFixed(3)+'x':'';
+    });
+    calcAFGap();calcDeltas();
+    const s=document.getElementById('entryDraftStatus');if(s){s.textContent='Restored saved draft.';s.classList.add('saved')}
+    return true;
+  }catch(e){console.warn('Entry draft restore failed',e);return false}
+}
+function clearEntryDraft(){
+  try{localStorage.removeItem(ENTRY_DRAFT_KEY)}catch(e){}
+  const s=document.getElementById('entryDraftStatus');if(s){s.textContent='Draft autosaves while you type.';s.classList.remove('saved')}
+}
+form.addEventListener('input',saveEntryDraft);
+form.addEventListener('change',saveEntryDraft);
+
+
+let editingRecordId=null;
+
+function splitMetricColor(v){
+  const s=String(v||'').trim();
+  const m=s.match(/^(.*?)\s+(Green|Red)$/i);
+  return m ? [m[1],m[2][0].toUpperCase()+m[2].slice(1).toLowerCase()] : [s,''];
+}
+function setEntryField(name,value){
+  const el=form.elements[name];
+  if(el)el.value=value??'';
+}
+function populateEntryForm(r){
+  form.reset();
+  const direct=[
+    'date','ticker','preGapRef','instOwn','income','marketCap','volatility','news','financialStrength',
+    'fundamentalsAsOf','fundamentalsSource','newsUrl','headline','publishedDate','publishedTime','articleText',
+    'pmTime','pmPrice','pmGap','pmVolume','pmFloat','pmZenP','pmAtrSprd','pmAtrHod',
+    'pre7Time','pre7Price','pre7Gap','pre7Volume','pre7Float','pre7ZenP','pre7AtrSprd','pre7AtrHod',
+    'afTime','afPrice','afVolume','afFloat'
+  ];
+  direct.forEach(k=>setEntryField(k,r[k]||''));
+
+  let [v,c]=splitMetricColor(r.pmZenV);setEntryField('pmZenV',v);setEntryField('pmZenVColor',c);
+  [v,c]=splitMetricColor(r.pmAtrVwap);setEntryField('pmAtrVwap',v);setEntryField('pmAtrVwapColor',c);
+  [v,c]=splitMetricColor(r.pre7ZenV);setEntryField('pre7ZenV',v);setEntryField('pre7ZenVColor',c);
+  [v,c]=splitMetricColor(r.pre7AtrVwap);setEntryField('pre7AtrVwap',v);setEntryField('pre7AtrVwapColor',c);
+
+  ['pm','pre7','af'].forEach(p=>{
+    const V=parseShares(form.elements[p+'Volume']?.value),F=parseShares(form.elements[p+'Float']?.value);
+    if(form.elements[p+'Rotate'])form.elements[p+'Rotate'].value=Number.isFinite(V)&&Number.isFinite(F)&&F>0?(V/F).toFixed(3)+'x':'';
+  });
+  calcAFGap();calcDeltas();
+}
+function openEditEntry(id){
+  const r=researchRecords.find(x=>x.id===id);if(!r)return;
+  editingRecordId=id;
+  clearEntryDraft();
+  populateEntryForm(r);
+  document.getElementById('entryTitle').textContent=`Edit ${r.ticker||'Entry'}`;
+  document.getElementById('saveEntryBtn').textContent='Save Changes';
+  const s=document.getElementById('entryDraftStatus');
+  if(s){s.textContent='Editing saved entry. Changes autosave as a draft until saved.';s.classList.remove('saved')}
+  modal.classList.add('show');modal.setAttribute('aria-hidden','false');
+}
+function resetEntryMode(){
+  editingRecordId=null;
+  document.getElementById('entryTitle').textContent='Add Data Set Entry';
+  document.getElementById('saveEntryBtn').textContent='Save Entry';
+}
+function openModal(){
+  resetEntryMode();
+  restoreEntryDraft();
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+}function closeModal(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true')}
+document.getElementById('openEntry').onclick=openModal;document.getElementById('closeEntry').onclick=closeModal;document.getElementById('cancelEntry').onclick=closeModal;modal.addEventListener('click',e=>{if(e.target===modal){/* backdrop click intentionally ignored */}});document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(deleteConfirmModal.classList.contains('show')) closeDeleteConfirm();
+    if(importChoiceModal.classList.contains('show')) closeImportChoice();
+  }
+});
 function parseShares(v){if(v==null)return null;let s=String(v).trim().replace(/,/g,'').toUpperCase();if(!s)return null;let m=1e6,n=s;if(s.endsWith('K')){m=1e3;n=s.slice(0,-1)}else if(s.endsWith('M')){m=1e6;n=s.slice(0,-1)}else if(s.endsWith('B')){m=1e9;n=s.slice(0,-1)}n=parseFloat(n);return Number.isFinite(n)?n*m:null}
 function formatShares(n){if(!Number.isFinite(n))return'';let a=Math.abs(n);if(a>=1e9)return(n/1e9).toFixed(2).replace(/\.?0+$/,'')+'B';if(a>=1e6)return(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M';if(a>=1e3)return(n/1e3).toFixed(1).replace(/\.?0+$/,'')+'K';return Math.round(n).toString()}
 function wireRotate(p){let v=form.elements[p+'Volume'],f=form.elements[p+'Float'],r=form.elements[p+'Rotate'];function c(){let V=parseShares(v.value),F=parseShares(f.value);r.value=Number.isFinite(V)&&Number.isFinite(F)&&F>0?(V/F).toFixed(3)+'x':'';calcDeltas()}v.addEventListener('input',c);f.addEventListener('input',c)}
@@ -2347,7 +3112,7 @@ function details(d){
   const na=d.newsAnalysis||{};
   const tagHtml=(na.tags||[]).map(t=>`<span class="news-tag">${esc(t)}</span>`).join('') || '<span class="news-preview-empty">No pattern tags detected.</span>';
   td.innerHTML=`<div class="detail-card">
-    <div class="detail-block"><h4>General</h4>${line('Date',d.date)}${line('Ticker',d.ticker)}${line('Pre-Gap Ref',d.preGapRef)}${line('Inst Own %',d.instOwn)}${line('Income',d.income)}${line('Market Cap',d.marketCap)}${line('Volatility',d.volatility)}${line('News',d.news)}${line('Financial Strength',d.financialStrength)}</div>
+    <div class="detail-block"><h4>General</h4>${line('Date',d.date)}${line('Ticker',d.ticker)}${line('Pre-Gap Ref',d.preGapRef)}${line('Inst Own %',d.instOwn)}${line('Income',d.income)}${line('Market Cap',d.marketCap)}${line('Volatility',d.volatility)}${line('News',d.news)}${line('Financial Strength',d.financialStrength)}${line('Entry Mode',d.entryMode)}${line('Stream Source',d.streamSource)}${line('Stream Session',d.streamSessionId)}</div>
     <div class="detail-block"><h4>Initial Premarket</h4>${line('Time',d.pmTime)}${line('Price',d.pmPrice)}${line('Gap %',d.pmGap)}${line('Volume',d.pmVolume)}${line('Float',d.pmFloat)}${line('Rotate',d.pmRotate)}${line('ZenV',d.pmZenV)}${line('ZenP',d.pmZenP)}${line('ATRSprd',d.pmAtrSprd)}${line('ATRVWAP',d.pmAtrVwap)}${line('ATRHOD',d.pmAtrHod)}</div>
     <div class="detail-block"><h4>Pre-7</h4>${line('Time',d.pre7Time)}${line('Price',d.pre7Price)}${line('Gap %',d.pre7Gap)}${line('Volume',d.pre7Volume)}${line('Float',d.pre7Float)}${line('Rotate',d.pre7Rotate)}${line('ZenV',d.pre7ZenV)}${line('ZenP',d.pre7ZenP)}${line('ATRSprd',d.pre7AtrSprd)}${line('ATRVWAP',d.pre7AtrVwap)}${line('ATRHOD',d.pre7AtrHod)}</div>
     <div class="detail-block"><h4>After Market</h4>${line('Time',d.afTime)}${line('Price',d.afPrice)}${line('Gap %',d.afGap)}${line('Volume',d.afVolume)}${line('Float',d.afFloat)}${line('Rotate',d.afRotate)}${line('Price Δ',d.afPriceDelta)}${line('Gap Δ',d.afGapDelta)}${line('Volume Δ',d.afVolumeDelta)}${line('Float Δ',d.afFloatDelta)}</div>
@@ -2378,16 +3143,18 @@ function renderRecord(d,append=false){
   ].forEach(v=>cell(tr,v));
 
   let td=document.createElement('td'),wrap=document.createElement('div'),
-      ex=document.createElement('button'),outcome=document.createElement('button'),del=document.createElement('button');
+      ex=document.createElement('button'),edit=document.createElement('button'),outcome=document.createElement('button'),del=document.createElement('button');
   wrap.className='row-actions';
   ex.className='row-btn';ex.textContent='Expand';
+  edit.className='row-btn';edit.textContent='Edit';
   outcome.className='row-btn outcome-btn'+(d.outcome&&Object.keys(d.outcome).length?' outcome-saved':'');
   outcome.textContent=d.outcome&&Object.keys(d.outcome).length?'Outcome ✓':'Outcome';
   del.className='row-btn delete';del.textContent='Delete';
-  wrap.append(ex,outcome,del);td.appendChild(wrap);tr.appendChild(td);
+  wrap.append(ex,edit,outcome,del);td.appendChild(wrap);tr.appendChild(td);
 
   let dr=details(d);
   ex.onclick=()=>{let o=dr.style.display==='none';dr.style.display=o?'table-row':'none';ex.textContent=o?'Collapse':'Expand'};
+  edit.onclick=()=>openEditEntry(d.id);
   outcome.onclick=()=>openOutcome(d.id);
   del.onclick=()=>{
     if(!confirmDelete){
@@ -2404,7 +3171,7 @@ form.addEventListener('submit',e=>{
   tbody.querySelectorAll('.empty-row').forEach(r=>r.remove());
   const newsAnalysis=analyzeNewsText(val('headline'),val('articleText'),val('newsUrl'));
   let d=normalizeImportedRecord({
-    id:'rec_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),
+    id:editingRecordId || 'rec_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),
     date:val('date'),ticker:val('ticker').toUpperCase(),preGapRef:val('preGapRef'),
     instOwn:val('instOwn'),income:val('income'),marketCap:val('marketCap'),volatility:val('volatility'),
     news:val('news'),financialStrength:val('financialStrength'),
@@ -2416,14 +3183,28 @@ form.addEventListener('submit',e=>{
     pre7ZenV:[val('pre7ZenV'),val('pre7ZenVColor')].filter(Boolean).join(' '),pre7ZenP:val('pre7ZenP'),pre7AtrSprd:val('pre7AtrSprd'),pre7AtrVwap:[val('pre7AtrVwap'),val('pre7AtrVwapColor')].filter(Boolean).join(' '),pre7AtrHod:val('pre7AtrHod'),
     afTime:val('afTime'),afPrice:val('afPrice'),afGap:val('afGap'),afVolume:dshares('afVolume'),afFloat:dshares('afFloat'),afRotate:val('afRotate'),
     afPriceDelta:val('afPriceDelta'),afGapDelta:val('afGapDelta'),afVolumeDelta:val('afVolumeDelta'),afFloatDelta:val('afFloatDelta'),
-    newsAnalysis,outcome:{}
+    newsAnalysis,
+    outcome:editingRecordId ? (researchRecords.find(r=>r.id===editingRecordId)?.outcome||{}) : {},
+    streamSessionId:editingRecordId ? (researchRecords.find(r=>r.id===editingRecordId)?.streamSessionId||'') : '',
+    streamSource:editingRecordId ? (researchRecords.find(r=>r.id===editingRecordId)?.streamSource||'') : '',
+    streamUrl:editingRecordId ? (researchRecords.find(r=>r.id===editingRecordId)?.streamUrl||'') : '',
+    streamDate:editingRecordId ? (researchRecords.find(r=>r.id===editingRecordId)?.streamDate||'') : '',
+    entryMode:editingRecordId ? (researchRecords.find(r=>r.id===editingRecordId)?.entryMode||'single') : 'single'
   });
-  researchRecords.unshift(d);
-  renderRecord(d,false);
+  if(editingRecordId){
+    const idx=researchRecords.findIndex(r=>r.id===editingRecordId);
+    if(idx>=0)researchRecords[idx]=d;
+    renderAllRecords();
+  }else{
+    researchRecords.unshift(d);
+    renderRecord(d,false);
+  }
   updateDuplicateHighlights();
   saveAppState();
 
+  clearEntryDraft();
   closeModal();form.reset();
+  resetEntryMode();
   document.getElementById('newsAnalysisPreview').innerHTML='<span class="news-preview-empty">Paste a headline/article and click Analyze News.</span>';
   ['pmRotate','pre7Rotate','afRotate','afGap','afPriceDelta','afGapDelta','afVolumeDelta','afFloatDelta'].forEach(n=>{if(form.elements[n])form.elements[n].value=''});
 });
