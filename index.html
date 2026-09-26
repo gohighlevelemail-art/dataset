@@ -1907,7 +1907,17 @@
           </section>
 
           <section class="section">
-            <div class="section-title pm">Initial Premarket — Usually 6:35–6:55 AM ET</div>
+            <div class="section-title pm" style="display:flex;align-items:center;gap:7px;flex-wrap:wrap">
+  <span>Initial Premarket — Usually</span>
+  <input id="pmWindowStart" type="time" value="06:35" step="60"
+    aria-label="Initial premarket usual start time"
+    style="width:112px;height:34px;padding:4px 8px">
+  <span>–</span>
+  <input id="pmWindowEnd" type="time" value="06:55" step="60"
+    aria-label="Initial premarket usual end time"
+    style="width:112px;height:34px;padding:4px 8px">
+  <span>ET</span>
+</div>
             <div class="fields">
               <div class="field"><label>Time</label><input type="time" name="pmTime" step="60">
 <div style="margin-top:6px;font-size:11px;color:#7f9bb3;line-height:1.35">
@@ -3870,6 +3880,19 @@ document.getElementById('clearNewsPatterns').onclick=()=>{
 
 
 window.addEventListener('DOMContentLoaded',()=>{loadAppState();});
+</script>
+
+
+<script>
+(function(){
+  const start=document.getElementById('pmWindowStart');
+  const end=document.getElementById('pmWindowEnd');
+  if(!start||!end)return;
+  start.value=localStorage.getItem('pmWindowStart')||start.value;
+  end.value=localStorage.getItem('pmWindowEnd')||end.value;
+  start.addEventListener('change',()=>localStorage.setItem('pmWindowStart',start.value));
+  end.addEventListener('change',()=>localStorage.setItem('pmWindowEnd',end.value));
+})();
 </script>
 
 </body>
