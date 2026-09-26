@@ -1909,7 +1909,10 @@
           <section class="section">
             <div class="section-title pm">Initial Premarket — Usually 6:35–6:55 AM ET</div>
             <div class="fields">
-              <div class="field"><label>Time</label><input type="time" name="pmTime"></div>
+              <div class="field"><label>Time</label><input type="time" name="pmTime" step="60">
+<div style="margin-top:6px;font-size:11px;color:#7f9bb3;line-height:1.35">
+  Editable — enter the exact stream time (including times before 6:35 AM).
+</div></div>
               <div class="field"><label>Price</label><input type="number" step="0.0001" name="pmPrice"></div>
               <div class="field"><label>Gap %</label><input type="number" step="0.01" name="pmGap"></div>
               <div class="field"><label>Volume</label><input type="text" name="pmVolume" placeholder="3.9 = 3.9M, or 900K"></div>
